@@ -148,5 +148,8 @@
       }
     }
   },
-  "defaultProject": "Mars-Nasa"
+  "defaultProject": "Mars-Nasa",
+  "cli": {
+    "analytics": "ef9b668c-e62a-4928-a115-5177c3564427"
+  }
 }
