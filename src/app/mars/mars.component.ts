@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarsComponent implements OnInit {
 
+  @Input() marsPhoto : string;
   constructor() { }
-
+  
+  @Input() appareilName : string;
   ngOnInit(): void {
   }
 
