@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-images',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-images.component.css']
 })
 export class ListImagesComponent implements OnInit {
-
-  constructor() { }
+  @Input() marsImgSrc: String;
+  constructor() { 
+    this.marsImgSrc ="";
+  }
 
   ngOnInit(): void {
   }

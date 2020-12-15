@@ -2,8 +2,8 @@
 
 
 <div class="container">
-  <mars *ngFor="let marsPhoto of marsPhotos"
-[marsPhoto]="marsPhoto.img_src"></mars>
+  <app-list-images *ngFor="let marsPhoto of marsPhotos"
+[marsImgSrc]="marsPhoto.img_src"></app-list-images>
 </div>
 
 <router-outlet></router-outlet>
