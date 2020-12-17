@@ -9,19 +9,27 @@ import { ServiceService } from '../service/service.service';
 export class ListImagesComponent implements OnInit {
  
    public marsImgSrc: any;
+    day !: number;
+    month !: number;
+    year !: number;
 
   constructor(private marsPhotosService : ServiceService) { 
-   // this.marsImgSrc = [];
   }
 
-  ngOnInit(): void{
-    this.marsPhotosService.getMarsImagesFromAPI().subscribe(
+  ngOnInit(){
+  }
+
+  date(){
+    //console.log(this.year, this.month, this.day);
+    this.marsPhotosService.getMarsImagesFromAPI(this.year, this.month, this.day).subscribe(
       (response) => {
         this.marsImgSrc = response.photos;
-        console.log(response.photos);
+        // if(response.photos === []){
+        //   console.log('Erreur');
+        // }
+        console.log(this.marsImgSrc);
       }
     );
-    
   }
 
 }

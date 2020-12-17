@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListImagesComponent } from './list-images/list-images.component';
 import { ListImagesItemComponent } from './list-images-item/list-images-item.component';
 import { ServiceService } from './service/service.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ServiceService } from './service/service.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ServiceService

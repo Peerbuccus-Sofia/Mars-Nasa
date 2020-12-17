@@ -14,6 +14,6 @@ export class ListImagesItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
   }
-
 }

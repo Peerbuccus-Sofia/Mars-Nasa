@@ -1,3 +1,14 @@
+<form>
+    <input type="number" [(ngModel)]="day"  placeholder="Jour" name="day"> 
+    <input type="number" [(ngModel)]="month"  placeholder="Mois" name="month">
+    <input type="number" [(ngModel)]="year"  placeholder="Année" name="year">
+
+    <button class="btn btn-dark" (click)="date()" >Valider</button>
+</form>
+<div *ngIf="marsImgSrc" >
+    <p>Il n'y pas d'images pour la date demandé</p>
+</div>
 <app-list-images-item *ngFor="let img of marsImgSrc"
     [marsImgSrc]="img">
 </app-list-images-item>
+
