@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ServiceService } from '../service/service.service';
 
 @Component({
   selector: 'app-list-images',
@@ -6,12 +7,29 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./list-images.component.css']
 })
 export class ListImagesComponent implements OnInit {
-  @Input() marsImgSrc: String;
-  constructor() { 
-    this.marsImgSrc ="";
+ 
+   public marsImgSrc: any;
+    day !: number;
+    month !: number;
+    year !: number;
+
+  constructor(private marsPhotosService : ServiceService) { 
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
+  }
+
+  date(){
+    //console.log(this.year, this.month, this.day);
+    this.marsPhotosService.getMarsImagesFromAPI(this.year, this.month, this.day).subscribe(
+      (response) => {
+        this.marsImgSrc = response.photos;
+        // if(response.photos === []){
+        //   console.log('Erreur');
+        // }
+        console.log(this.marsImgSrc);
+      }
+    );
   }
 
 }
