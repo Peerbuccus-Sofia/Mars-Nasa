@@ -6,8 +6,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./list-images.component.css']
 })
 export class ListImagesComponent implements OnInit {
+ 
+   id? : number;
   @Input() marsImgSrc: String;
+
+
   constructor() { 
+    this.id;
     this.marsImgSrc ="";
   }
 

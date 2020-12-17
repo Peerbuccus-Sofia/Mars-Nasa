@@ -1,9 +1,10 @@
-
-
-
 <div class="container">
-  <app-list-images *ngFor="let marsPhoto of marsPhotos"
-[marsImgSrc]="marsPhoto.img_src"></app-list-images>
+  <div class="row">
+    <div class="col-2">
+      <app-list-images *ngFor="let marsPhoto of marsPhotos"
+      [marsImgSrc]="marsPhoto.img_src"></app-list-images>
+    </div>
+  </div>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> 
