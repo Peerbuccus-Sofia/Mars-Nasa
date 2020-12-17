@@ -1,14 +1,38 @@
 <form>
-    <input type="number" [(ngModel)]="day"  placeholder="Jour" name="day"> 
-    <input type="number" [(ngModel)]="month"  placeholder="Mois" name="month">
-    <input type="number" [(ngModel)]="year"  placeholder="Année" name="year">
 
-    <button class="btn btn-dark" (click)="date()" >Valider</button>
+    <div class="align-self-center row mt-5">
+        <div class="col">
+            <input type="number" [(ngModel)]="day" class="form-control"  placeholder="Jour" name="day"> 
+          </div>
+          <div class="col">
+            <input type="number" [(ngModel)]="month" class="form-control"  placeholder="Mois" name="month">
+          </div>
+          <div class="col">
+            <input type="number" [(ngModel)]="year" class="form-control" placeholder="Année" name="year">
+          </div>
+    </div>
+
+    <div class="mt-3">
+        <button class="btn btn-dark btn-block btn-md" (click)="date()" >Valider</button>
+    </div>
+
 </form>
-<div *ngIf="marsImgSrc" >
+
+<div *ngIf!="marsImgSrc">
     <p>Il n'y pas d'images pour la date demandé</p>
 </div>
-<app-list-images-item *ngFor="let img of marsImgSrc"
-    [marsImgSrc]="img">
-</app-list-images-item>
+<div class="container mt-5">
+
+      <div class="row ustify-content-md-center">
+        <app-list-images-item *ngFor="let img of marsImgSrc"
+            [marsImgSrc]="img">
+        </app-list-images-item>
+    </div>
+</div>
+
+    
+    
+
+
+    
 
