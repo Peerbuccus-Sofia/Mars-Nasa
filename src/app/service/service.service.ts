@@ -6,15 +6,13 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServiceService {
-
-    marsPhotos = [{
-     id:'',
-     img_src: ''
-    }]
-
   key = "xSojeW2LU9QzRUytpKXk4kV1FXHSPRa8Uh108MSi";
-  url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY";
+  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-10-10&api_key=${this.key}`;
 
+  marsPhoto = [
+    { id : '',
+      img_scr :''}
+  ]
   constructor(private http: HttpClient) { 
   }
 

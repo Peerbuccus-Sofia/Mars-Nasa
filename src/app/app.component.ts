@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ServiceService } from './service/service.service';
 
 @Component({
@@ -6,16 +6,9 @@ import { ServiceService } from './service/service.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Mars-Nasa';
-  marsPhotos : any;
-
   constructor(private marsPhotosService : ServiceService){
-  }
-  
-  ngOnInit(): void{
-    this.marsPhotosService.getMarsImagesFromAPI().subscribe(data=>{console.warn(data)
-    })
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ServiceService } from '../service/service.service';
 
 @Component({
   selector: 'app-list-images',
@@ -7,16 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListImagesComponent implements OnInit {
  
-   id? : number;
-  @Input() marsImgSrc: String;
+   public marsImgSrc: any;
 
-
-  constructor() { 
-    this.id;
-    this.marsImgSrc ="";
+  constructor(private marsPhotosService : ServiceService) { 
+   // this.marsImgSrc = [];
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
+    this.marsPhotosService.getMarsImagesFromAPI().subscribe(
+      (response) => {
+        this.marsImgSrc = response.photos;
+        console.log(response.photos);
+      }
+    );
+    
   }
 
 }

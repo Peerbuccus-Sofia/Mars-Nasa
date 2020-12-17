@@ -7,10 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListImagesItemComponent implements OnInit {
 
-  @Input() marsImgSrc: string;
+  @Input() marsImgSrc: Array<Object>;
+
   constructor() {
-    this.marsImgSrc = "";
-   }
+    this.marsImgSrc = [];
+  }
 
   ngOnInit(): void {
   }
